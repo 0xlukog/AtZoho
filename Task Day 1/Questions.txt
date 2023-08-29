@@ -1,0 +1,4 @@
+Question 1 - Count number of digits in a number
+Question 2 - Find sum of even numbers between 1 - n
+Question 3 - Find Sum of odd numbers from 1 - n
+ 
