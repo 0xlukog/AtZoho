@@ -35,21 +35,21 @@
 //     }
 //     return k;
 // }
-//  int removeDuplicates(int* nums,int numsSize) {
+ int removeDuplicates(int* nums,int numsSize) {
     
         
-//         int count = 0;                              // Store a count with zero
+        int count = 0;                              // Store a count with zero
         
-//         for(int i = 1;i<numsSize; i++){          // Starting the index from 1 because we have to comapre Index 0
-//             int n1=nums[i],n2=nums[count];
-//             if(n1!=n2){
-//                 count++;    
-//                 nums[count] = nums[i];              // Inserting the values in modified array
-//             }
+        for(int i = 1;i<numsSize; i++){          // Starting the index from 1 because we have to comapre Index 0
+            int n1=nums[i],n2=nums[count];
+            if(n1!=n2){
+                count++;    
+                nums[count] = nums[i];              // Inserting the values in modified array
+            }
             
-//         }
-//         return count+1;                             // Size of array will be (index+1)
-//     }
+        }
+        return count+1;                             // Size of array will be (index+1)
+    }
 void swap(int* nums, int i,int j){
     int temp=nums[i];
     nums[i]=nums[j];
