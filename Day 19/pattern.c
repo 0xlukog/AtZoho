@@ -17,7 +17,7 @@ void init()
 
     p[1].pattern = 'y';
     replaceString(p[1].word, "sleep", 5);
-        p[2].pattern = 'z';
+    p[2].pattern = 'z';
     replaceString(p[2].word, "note", 5);
 }
 
@@ -47,9 +47,9 @@ void addStrings(char saveTo[], char save[], int saveLength)
 {
     int i = 0, j = 0;
     while (saveTo[i] != '\0')
-        {
-            i++;
-        }
+    {
+        i++;
+    }
     for (; j < saveLength; j++)
     {
         saveTo[i++] = save[j];
