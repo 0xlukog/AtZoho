@@ -1,0 +1,72 @@
+* {
+    font-family: 'Times New Roman';
+    margin: 0;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+li {
+    font-size: 15pt;
+    list-style:none;
+    display: inline-block;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+ul{
+    flex-wrap: wrap;
+}
+#navdiv{
+    background-color: bisque;
+    height: 5vh;
+}
+
+#descriptionPage{
+
+    background-color: red;
+    color:black;
+    float: left;
+    width: 50%;
+    height: 95vh;
+
+}
+#registerationPage{
+
+    background-color: aqua;
+    color:black;
+    float: right;
+    width: 50%;
+    height: 95vh;
+
+}
+#imgDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.imgContainer{
+    position: relative;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* flex-wrap: wrap; */
+}
+#knowmore{
+    width: fit-content;
+    color: green;
+    background-color: greenyellow;
+}
+#registerationPage{
+    background-image: url("/home/temp/Incubation/html/samples/bg.jpg");
+    background-size: cover;
+}
