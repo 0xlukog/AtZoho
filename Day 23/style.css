@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main {
+
+    position: relative;
+    background-color: #8A3D7B;
+    height: 100vh;
+    width: 100vw;
+}
+
+#floatingbox {
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 50px;
+    width: 90vw;
+    height: 90vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5D0247;
+    border-radius: 20px;
+}
+
+#login {
+    box-sizing: border-box;
+    padding: 20px;
+    /*box sizing : boder-box keeps the size of the div fixed even the padding increase*/
+    position: absolute;
+    top: 5vh;
+    left: 55vw;
+    width: 30vw;
+    height: 80vh;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#intrested {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.intrestedButton:hover {
+    margin: 2px;
+    padding: 8px;
+    background-color: #8A3D7B;
+    border-color: #8A3D7B;
+    justify-content: center;
+    font-size: 18pt;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+#formHeading {
+    display: flex;
+    justify-content: center;
+}
+
+#cool {
+    color: #8A3D7B;
+}
+
+a {
+    text-decoration: none;
+    color: bisque;
+}
+
+#boxContent {
+    height: fit-content;
+
+}
+
+.contactButton {
+    font-size: 30pt;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #5D0247;
+    border: none;
+
+}
+.contactButton:hover {
+    font-size: 30pt;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #8A3D7B;
+    border-radius: 15px;
+    border: none;
+}
+
+
+#contacts {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    clear: both;
+    height: fit-content;
+    font-size: 30pt;
+}
+
+h1 {
+    font-size: 40pt;
+}
+
+.checks {
+    display: none;
+}
+
+.inputs {
+    flex: 1 0 60px;
+    border: none;
+    font-size: 20pt;
+    padding: 8px;
+    display: block;
+    border-bottom: 1px solid black;
+    min-width: none;
+    max-width: 400px ;
+    background-color: whitesmoke;
+}
+
+#formElements {
+    position: absolute;
+    top: 30%;
+    flex-wrap: wrap;
+}
+
+.intrestedButton {
+    margin: 2px;
+    padding: 8px;
+    background-color: whitesmoke;
+    border-color: #8A3D7B;
+    justify-content: center;
+    font-size: 18pt;
+    border-radius: 5px;
+    cursor: pointer;
+}
