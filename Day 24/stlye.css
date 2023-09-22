@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+* {
+    margin: 0;
+    --violet: #2D0140;
+    --button-highlight: #4F0259;
+    --bg: #BF048D;
+    --border: #B7A4BF;
+    --body2: #EEEEEE;
+    font-family: 'poppins';
+}
+
+#main {
+    position: absolute;
+    background-color: var(--bg);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#floater {
+    position: relative;
+    display: flex;
+    background-color: var(--violet);
+    height: 80%;
+    width: 50%;
+    border-radius: 15px;
+}
+
+#contacts {
+    position: relative;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+#contactsContents {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#contactme {
+    position: relative;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#textContent {
+    color: white;
+    font-size: 14pt;
+}
+
+#cool {
+    color: var(--bg);
+}
+
+#contactOptions {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 10px;
+}
+
+.contactButtons {
+    position: relative;
+    width: 60%;
+    height: 40px;
+    border: none;
+    text-align: left;
+    background-color: var(--violet);
+    border-radius: 7px;
+    color: white;
+}
+
+.contactButtons:hover {
+    position: relative;
+    width: 60%;
+    height: 40px;
+    border: none;
+    text-align: left;
+    border: 2px solid var(--bg);
+    background-color: var(--button-highlight);
+    border-radius: 7px;
+    color: white;
+}
+
+.smIcons {
+    background-color: var(--violet);
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.smIcons:hover {
+    background-color: var(--bg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+i {
+    color: var(--body2);
+}
+
+#contactform {
+    position: relative;
+    height: 85%;
+    width: 85%;
+    background-color: var(--body2);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+}
+
+#intrested {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#intrestedText {
+    color: var(--bg);
+}
+
+.intrestedButton {
+
+    background-color: var(--body2);
+    border: 2px solid var(--border);
+    justify-content: center;
+    border-radius: 5px;
+    padding: 8px 10px 8px 10px;
+    cursor: pointer;
+}
+
+.intrestedButton:hover {
+    background-color: var(--bg);
+    color: white;
+    border: 2px solid var(--bg);
+    justify-content: center;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+#formElements {
+    display: flex;
+    flex-direction: column;
+
+}
+
+input {
+    border: none;
+    background-color: var(--body2);
+    border-bottom: 2px solid var(--border);
+}
+
+input:focus {
+    outline: none;
+}
+
+#submitButton {
+    width: fit-content;
+    background-color: var(--bg);
+    border: 2px solid var(--bg);
+    border-radius: 10px;
+    color: var(--body2);
+    padding: 10px 20px 10px 20px;
+}
