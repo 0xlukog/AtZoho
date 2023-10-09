@@ -1,0 +1,5 @@
+Started to learn the working of Web Applications,
+Learned Topics:
+1. DNS
+2. HTTP / HTTPS
+
