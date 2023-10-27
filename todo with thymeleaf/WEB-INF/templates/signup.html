@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}"></title>
+    <link rel="stylesheet" href="signin.css">
+    <!-- <style>
+        * {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-image: url("./bg.jpg");
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logo {
+            height: 40px;
+        }
+
+        img {
+            height: 100%;
+        }
+
+        #login-box {
+            height: fit-content;
+            width: 20%;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: #ebebeb;
+            border: 2px solid gray;
+            border-radius: 20px;
+        }
+
+        #login-form {}
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 10px;
+        }
+
+        #form-element-text,
+        textarea {
+            border: none;
+            height: 30px;
+            background-color: aliceblue;
+        }
+
+        #form-element-text,
+        textarea:focus {
+            border: none;
+            height: 30px;
+            background-color: aliceblue;
+            border-radius: 5px;
+        }
+
+        #login-button {
+            background-color: blue;
+            color: aliceblue;
+            height: 30px;
+            width: 100%;
+            border: none;
+        }
+
+        #failedUser {
+            color: red;
+        }
+
+        #successUser {
+            color: green;
+        }
+    </style> -->
+</head>
+
+<body>
+    <section id="login-box">
+        <div>
+            <h4 th:if="${username != null && userGenerated!=1}"
+                th:text="'Error, Username ' + ${username} + ' already exists'" id="failedUser"></h4>
+            <h4 th:if="${userGenerated==1}" th:text="'User ' + ${username} + ' generated successfully! Redirecting'"
+                id="successUser"></h4>
+        </div>
+        <div id="login-box-container">
+            <div id="logo">
+                <img src="./logo.png">
+            </div>
+            <div id="login-text">
+                <p>
+                <h3>Sign up</h3>to access Page</p>
+            </div>
+            <div id="login-form">
+                <form action="/thymeleaf/signup" method="post">
+                    <input type="text" name="username" id="form-element-text" placeholder="User name" required
+                        pattern="[a-zA-Z0-9-_]{4,24}" title="name in only small letters">
+                    <input type="text" name="password" id="form-element-text" placeholder="Password" required>
+                    <input type="submit" value="Sign up" id="login-button">
+                </form>
+            </div>
+            <br>
+        </div>
+    </section>
+</body>
+
+</html>
