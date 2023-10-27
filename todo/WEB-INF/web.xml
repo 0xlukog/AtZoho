@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app >
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+<servlet>
+  <servlet-name>addList</servlet-name>
+  <servlet-class>com.servlets.addTodo</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>addList</servlet-name>
+<url-pattern>/addList</url-pattern>
+</servlet-mapping>
+<servlet>
+  <servlet-name>view</servlet-name>
+  <servlet-class>com.servlets.viewToDo</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>view</servlet-name>
+<url-pattern>/viewList</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>clear</servlet-name>
+  <servlet-class>com.servlets.clearTodo</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>clear</servlet-name>
+<url-pattern>/clearList</url-pattern>
+</servlet-mapping>
+</web-app>
