@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title></title>
+</head>
+<style>
+    * {
+        margin: 0;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #mainDiv {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        /* align-items: center; */
+    }
+
+    #parentDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #submitButton {
+        background-color: green;
+        color: aliceblue;
+        height: 100%;
+        width: 40px;
+        border: none;
+    }
+
+    #addRemove {
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .simple-list {
+        list-style-type: decimal;
+        /* Use numbers as list markers */
+        color: #333;
+        /* Text color */
+        font-size: 16px;
+        /* Font size */
+        margin-left: 20px;
+        /* Left margin */
+    }
+
+
+    .simple-list li {
+        margin: 10px 0;
+        /* Top and bottom margin for each list item */
+        padding: 5px;
+        /* Padding around each list item */
+        background-color: #f0f0f0;
+        /* Background color for list items */
+        border-radius: 5px;
+    }
+    #changeRemove{
+        display: flex;
+    }
+    .listItems{
+        border: none;
+        background-color: #f0f0f0;
+        font-size: 16px;
+    }
+    .listItems:focus{
+        border: none;
+        outline: none;
+        background-color: #f0f0f0;
+    }
+
+    
+</style>
+
+<body>
+
+    <div id="navbar"
+        style="display: flex;flex-direction: row; justify-content: space-between;box-sizing: border-box;padding: 20px; background-color: bisque;">
+        <h3 th:text="'Welcome '+${username}" id="username"></h3>
+        <h3>To Do List</h3>
+        <button onclick="window.location.href='/thymeleaf/signout'" id="">Sign out</button>
+    </div>
+    <div id="mainDiv">
+        <div id="parentDiv">
+            <div id="viewitems">
+                <ol class="simple-list">
+                    <li th:each="item,i:${items}">
+                        <div id="changeRemove">
+
+                            <form action="/thymeleaf/" method="post">
+                                <input type="text" name="change" hidden>
+                                <input type="text" name="oldValue" th:value="${item}" class="listItems">
+                                <button th:value="${i.index}" name="changeValue" required>🔄</button>
+                            </form>
+
+                            <form action="/thymeleaf/" method="post">
+                                <input type="text" name="remove" hidden>
+                                <button th:value="${i.index}" name="removeValue">➖</button>
+                            </form>
+
+                        </div>
+                    </li>
+                    <li>
+
+                       <form action="/thymeleaf/" method="post">
+                        <input type="text" name="add" hidden>
+                        <input type="text" name="item" required pattern="[a-zA-Z0-9\s]+" style="font-size: 16px;">
+                        <button  name="addButton"required>➕</button>
+                       </form>
+
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

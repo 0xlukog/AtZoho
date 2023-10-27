@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        --blue: #398CBF;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #mainDiv {
+        background-color: #F2F2F2;
+        border: 5px solid #D8EBF2;
+        height: 90%;
+        width: 90%;
+        border-radius: 10px;
+    }
+
+    #header {
+        background-color: #D8EBF2;
+        color: var(--blue);
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #searchbar {
+
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 5px;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    #heightController {
+        height: 79.8%;
+
+    }
+
+    #tablesection {
+
+        display: flex;
+        justify-content: center;
+        overflow-y: auto;
+        max-height: 100%;
+
+    }
+
+    #contacts {
+        width: 95%;
+        text-align: center;
+    }
+
+    #entryFormsection {
+        height: 5%;
+        display: flex;
+        background-color: #cfcfcf;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #entryForm {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        border-bottom: 2px solid rgb(192, 192, 192);
+    }
+
+    tr {
+        height: 40px;
+    }
+
+    .view {
+        border: none;
+        background-color: transparent;
+        caret-color: transparent;
+        text-align: center;
+    }
+
+    .view:focus {
+        outline: none;
+        caret-color: transparent;
+    }
+
+    #addButton {
+
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        color: white;
+        background-color: var(--blue);
+        box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(84 105 212) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 4px 8px;
+        display: inline-block;
+        /* min-height: 28px; */
+        transition: background-color .24s, box-shadow .24s;
+
+        :hover {
+            box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(84 105 212) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 3px 9px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+        }
+
+    }
+</style>
+
+
+<body>
+    <script src="https://kit.fontawesome.com/7f8574c7f3.js" crossorigin="anonymous"></script>
+    
+    <div id="mainDiv">
+        <h1 th:if="${show=='-1'}" th:text="${'EMPTY CONTACT LIST'}" style="color: #a7a7a7; top: 50%;left: 50%;"></h1>
+        <section id="header">
+            <h2>PhoneBook</h2>
+        </section>
+        <section>
+            <form action="/search" id="searchbar" method="post">
+                <input type="text" name="search" id="searchbox">
+                <input type="submit" value="search" id="addButton">
+            </form>
+        </section>
+        <div id="heightController">
+            <section id="tablesection">
+                
+                <table id="contacts" th:if="${show=='1'}">
+                    <tr>
+                        <th>Contact</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Modify</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr th:each="contact,id:${contactMap}">
+                        <form action="/edit" method="post">
+                            <td><input class="view" th:value="${contact.name}" type="text" name="name" readonly></td>
+                            <td><input class="view" th:value="${contact.number}" type="text" name="number" readonly></td>
+                            <td><input class="view" th:value="${contact.email}" type="text" name="email" readonly></td>
+                            <td><button name="modify" th:value="${id.index}" th><i
+                                        class="fa-solid fa-pen-to-square"></i></button></td>
+                        </form>
+                        <td>
+                            <form action="/removeContact" method="post">
+                                <button name="number" th:value="${id.index}" ><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+
+
+                </table>
+            </section>
+        </div>
+        <section id="entryFormsection">
+            <div>
+                <form action="/addContact" method="post" id="entryForm" th:if="${edit!='1'}">
+                    <div>Name : <input type="text" name="name" id="" required></div>
+                    <div>Phone : <input type="text" name="number" id="" required></div>
+                    <div>Email : <input type="text" name="email" id=""></div>
+                    <button id="addButton">Add Contact</button>
+                </form>
+            </div>
+            <div th:if="${edit=='1'}">
+                <form action="/editContact" id="entryForm" method="post">
+
+                    <div id="add">Name : <input type="text" name="name" id="newFormElement" th:value="${name}" required></div>
+                    <div>Number : <input type="number" name="number" id="newFormElement" th:value="${number}" required></div>
+                    <div>Email :<input type="email" name="email" th:value="${email}" required></div>
+                    <button id="addButton" name="modify" th:value="${index}">Modify Contact</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
