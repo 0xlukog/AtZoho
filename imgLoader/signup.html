@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body >
+    <section id="login-box">
+        <div id="login-box-container">
+            <div id="logo">
+                <img src="./logo.png">
+            </div>
+            <div id="login-text">
+                <p><h3>Sign up</h3>to access Page</p>
+            </div>
+            <div id="login-form">
+                <form action="/imgLoader/signup" method="post" enctype="multipart/form-data">
+                    <input type="text" name="username" id="form-element-text" placeholder="User name" required pattern="[a-zA-Z0-9-_]{4,24}" title="name in only small letters">
+                    <input type="text" name="password" id="form-element-text" placeholder="Password" required>
+                    <div id="dp">Profile Picture <input type="file" name="file" id="form-element"></div>
+                    <input type="submit" value="Sign up" id="login-button">
+                </form>
+            </div>
+            <br>
+        </div>
+    </section>
+</body>
+</html>

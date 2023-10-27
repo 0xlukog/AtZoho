@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-image: url("./bg.jpg");
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    height: 40px;
+}
+
+img {
+    height: 100%;
+}
+
+#login-box {
+    height: fit-content;
+    width: 20%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #ebebeb;
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+#login-form {}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+#form-element-text,textarea{
+    border: none;
+    height: 30px;
+    background-color: aliceblue;
+}
+
+#form-element-text,textarea:focus {
+    border: none;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+#login-button{
+    background-color: blue;
+    color: aliceblue;
+    height: 30px;
+    width: 100%;
+    border: none;
+}
+#failedUser{
+    color: red;
+}
+#successUser{
+    color: green;
+}

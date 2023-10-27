@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+<filter>
+<filter-name>LoginFilter</filter-name>
+<filter-class>com.Filters.LoginFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/</url-pattern>
+</filter-mapping>
+<!-- //TODO add filter to deny access to html files without server redirecting -->
+<!-- <filter> 
+<filter-name>HtmlAccess</filter-name>
+<filter-class>com.Filters.HtmlAccessFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>HtmlAccess</filter-name>
+    <url-pattern>/*.html</url-pattern>
+</filter-mapping> -->
+<servlet>
+  <servlet-name>home</servlet-name>
+  <servlet-class>com.servlets.home</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>home</servlet-name>
+<url-pattern></url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>signin</servlet-name>
+  <servlet-class>com.servlets.signin</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>signin</servlet-name>
+<url-pattern>/signin</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>signup</servlet-name>
+  <servlet-class>com.servlets.signup</servlet-class>
+      <multipart-config>
+        <location>/home/temp/web/tomcat/webapps/imgLoader/storage/</location>
+        <max-file-size>10485760</max-file-size>
+        <max-request-size>52428800</max-request-size>
+        <file-size-threshold>1024</file-size-threshold>
+    </multipart-config>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>signup</servlet-name>
+<url-pattern>/signup</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>signout</servlet-name>
+  <servlet-class>com.servlets.signout</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>signout</servlet-name>
+<url-pattern>/signout</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>viewUsers</servlet-name>
+  <servlet-class>com.servlets.viewUsers</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>viewUsers</servlet-name>
+<url-pattern>/viewUsers</url-pattern>
+</servlet-mapping>
+
+</web-app>
